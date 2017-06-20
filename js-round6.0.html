@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>js-round6</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0,user-scalable=no,initial-scale=1" />
+
+    <link href="./general.css" rel="stylesheet" type="text/css">
+    <link href="./reset.css" rel="stylesheet" type="text/css">
+    <link href="./js-round6.0.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+
+   <!-- <script type="text/javascript" src="./js-round6.0.js"></script>-->
+
+
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+
+<form class="login" name="loginForm" >
+
+    <p class="head">喝我水站后台登陆</p>
+    <div class="low"><div class="img"><img src="./user.png"><span></span></div>
+
+    <input  type="text" name="id"   placeholder="用户名"  ng-model="userData.username" required  ng-minlength="4"  ng-maxlength="12"></div>
+
+    <p class="tip-1" ng-if="loginForm.id.required&&loginForm.id.$touched">用户名不能为空</p>
+    <p class="tip-1"  ng-if="(loginForm.id.$error.minlength||loginForm.id.$error.maxlength)&&loginForm.id.$touched">用户名长度为4-12位</p>
+
+    <div class="low2"><div  class="img"><img src="./sn.png"><span></span></div>
+
+    <input  type="password" name="password" placeholder="密码"  ng-model="userData.password" required  ng-minlength="6"  ng-maxlength="32"></div>
+
+    <p class="tip-2"  ng-if="loginForm.password.$error.required&&loginForm.password.$touched">密码不能为空</p>
+    <p class="tip-2" ng-if="(loginForm.password.$error.minlength||loginForm.password.$error.maxlength)&&loginForm.id.$touched">密码长度为6-32位</p>
+    <p class="tip-3" ></p>
+    <button type="submit" ng-click="toggle(userData)">登陆</button>
+
+</form>
+
+</body>
+</html>
